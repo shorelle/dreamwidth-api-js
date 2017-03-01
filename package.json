@@ -36,7 +36,7 @@
     "del": "^2.2.2",
     "globby": "^6.1.0",
     "gulp": "^3.8.10",
-    "gulp-babel": "^4.0.0",
+    "gulp-babel": "^6.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-istanbul": "^0.6.0",
     "gulp-load-plugins": "^0.8.0",
