@@ -1,10 +1,8 @@
-# node-dreamwidth
+# dreamwidth-api-js
 
-A simple JS client for Dreamwidth's XMLRPC API.
+A simple Javascript client for Dreamwidth's XMLRPC API.
 
 Still very much in progress!
 
 ## To-Do
-
-Unit testing, helper functions, documentation.
-
+Unit testing, helper methods, documentation.

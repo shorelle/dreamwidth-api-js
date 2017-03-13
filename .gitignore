@@ -38,4 +38,4 @@ jspm_packages
 
 # Tests (temporary)
 test
-example/test.js
+example

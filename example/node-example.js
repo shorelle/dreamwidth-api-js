@@ -1,7 +1,7 @@
 var Dreamwidth = require('../lib/dreamwidth');
 
 // Placeholder username and password
-var myDreamwidth = new Dreamwidth('username','password');
+var myDreamwidth = Dreamwidth('username','password');
 
 // Example: get events
 var options = {
@@ -9,7 +9,7 @@ var options = {
   howmany: 2
 };
 
-myDreamwidth.methodAuth('getevents', options)
+myDreamwidth.method('getevents', options)
   .then(function(data) {
     console.log(data);
   }).catch(function(err) {

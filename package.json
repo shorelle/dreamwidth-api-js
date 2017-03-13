@@ -1,64 +1,33 @@
 {
   "name": "node-dreamwidth",
   "version": "0.0.1",
-  "description": "An XMLRPC API client for Dreamwidth",
+  "description": "A simple Javascript client for Dreamwidth's XMLRPC API.",
   "main": "lib/dreamwidth.js",
-  "scripts": {
-    "test": "gulp",
-    "build": "gulp build",
-    "coverage": "gulp coverage",
-    "prepublish": "npm run build"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shorelle/node-dreamwidth.git"
+    "url": "https://github.com/shorelle/dreamwidth-api-js.git"
   },
   "keywords": [
     "dreamwidth",
     "xmlrpc",
     "api"
   ],
-  "author": "shorelle",
+  "author": "shorelle <fireskywalker@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shorelle/node-dreamwidth/issues"
-  },
-  "homepage": "https://github.com/shorelle/node-dreamwidth",
+  "homepage": "https://github.com/shorelle/dreamwidth-api-js",
   "dependencies": {
     "xmlrpc": "^1.3.2"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
-    "babel-register": "^6.23.0",
-    "babelify": "^7.3.0",
-    "browserify": "^14.1.0",
     "chai": "^2.0.0",
-    "del": "^2.2.2",
-    "globby": "^6.1.0",
     "gulp": "^3.8.10",
     "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
     "gulp-eslint": "^3.0.1",
-    "gulp-istanbul": "^0.6.0",
     "gulp-load-plugins": "^0.8.0",
-    "gulp-mocha": "^2.0.0",
     "gulp-notify": "^2.1.0",
     "gulp-plumber": "^0.6.6",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.0.1",
-    "isparta": "^2.0.0",
-    "mkdirp": "^0.5.0",
-    "mocha": "^2.1.0",
-    "sinon": "^1.12.2",
-    "sinon-chai": "^2.7.0",
-    "through2": "^2.0.3",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "configOptions": {
-    "mochaGlobals": [
-      "stub",
-      "spy",
-      "expect"
-    ]
+    "mocha": "^2.1.0"
   }
 }
