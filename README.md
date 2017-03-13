@@ -1,26 +1,29 @@
 # dreamwidth-api-js
-A simple Javascript client for Dreamwidth's XML-RPC API. (Still in progress!)
+A simple Javascript client for [Dreamwidth](http://www.dreamwidth.org)'s XML-RPC API. (Still in progress!)
 * Uses native Promises (transpiled for ES5)
+
 ## Usage
 Download the library and include (or use `import Dreamwidth from './lib/dreamwidth'` for ES6)
 ```javascript
 var Dreamwidth = require('./lib/dreamwidth');
 ```
 (To-do: publish on npm)
+
 ### Login
 Login to your Dreamwidth account (note: you are required to login to access the API)
 ```javascript
 var myDreamwidth = Dreamwidth.login('username', 'password');
 ```
+
 ### Methods
-Use the general `.method(value, options)` function to access Dreamwidth's API. See [wiki documentation](http://wiki.dwscoalition.org/wiki/index.php/XML-RPC_Protocol) for a list of available methods and their options, in conjunction with the [original Livejournal docs](http://www.livejournal.com/doc/server/ljp.csp.xml-rpc.protocol.html) (both are a bit outdated)
+Use the general `.method(value, options)` function to access API methods. See [wiki documentation](http://wiki.dwscoalition.org/wiki/index.php/XML-RPC_Protocol) for a list of available methods and their options, in conjunction with the [original Livejournal docs](http://www.livejournal.com/doc/server/ljp.csp.xml-rpc.protocol.html) (note that both are a bit outdated)
 
 **Example:** use 'getevents' method to get the latest posts from your journal.
 ```javascript
 // Set relevant options for the method
 var options = {
-    selecttype: 'lastn', // get most recent n entries
-    howmany: 10          // default is 20
+    selecttype: 'lastn',
+    howmany: 10
 }
 
 myDreamwidth.method('getevents', options)
@@ -41,11 +44,10 @@ myDreamwidth.method('getevents', options)
        props: [Object],
        subject: 'The post subject',
        url: 'https://your_name.dreamwidth.org/123.html' },
-       {...},
-       {...},
        // More entries...
     ]
 }
 ```
+
 ## To-Do
 Unit testing, helper methods, documentation.
