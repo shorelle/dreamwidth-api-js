@@ -2,28 +2,60 @@
  * Global test setup
  */
 
-global.nock = require('nock');
+var nock = require('nock');
 
-global.chai = require('chai');
-global.chai.use(require('chai-as-promised'));
-global.expect = global.chai.expect;
+var chai = require('chai');
+chai.use(require('chai-as-promised'));
+var expect = chai.expect;
 
-global.swapi = require('../lib/dreamwidth');
+var Dreamwidth = require('../lib/dreamwidth');
 
-var record = require('./utils/record');
-var recorder = record();
-
-describe('call method', function() {
+describe('Dreamwidth', function() {
+  // Create Dreamwidth login
+  var dw = Dreamwidth.login('user','password');
+  var hashedPassword = '5f4dcc3b5aa765d61d8327deb882cf99';
 
   before( function() {
-    recorder.before();
+    // Set up nock requests
+    require('./utils/setup');
   });
 
   after( function() {
-    recorder.after();
     nock.cleanAll();
   });
 
+  describe('constructor', function() {
+    it('should return an object with username and password properties', function() {
+      expect(dw).to.be.an('object');
+      expect(dw).to.have.property('username');
+      expect(dw).to.have.property('password');
+    });
 
+    it('should have login username set', function() {
+      expect(dw).to.have.property('username', 'user');
+    });
+
+    it('should have login password hashed and set', function() {
+      expect(dw).to.have.property('password', hashedPassword);
+    });
+  });
+
+  describe('method to get latest posts', function() {
+    var options = { 
+      selecttype: 'lastn'
+    };
+
+    it('should return an object with events property', function() {
+      expect(dw.method('getevents', options))
+        .to.eventually.be.an('object')
+        .and.have.property('events');
+    });
+
+    it('should return an array of (1) event objects', function() {
+      expect(dw.method('getevents', options))
+        .to.eventually.have.deep.property('events[0]')
+        .with.keys('eventtime','event','anum','itemid','logtime','props','subject','url');
+    });
+  });
 
 });
