@@ -1,13 +1,16 @@
 # dreamwidth-api-js
-A simple Javascript client for [Dreamwidth](http://www.dreamwidth.org)'s XML-RPC API. (Still in progress!)
+A simple Javascript client for [Dreamwidth](http://www.dreamwidth.org)'s XML-RPC API.
 * Uses native Promises (transpiled for ES5)
+* Additional helper functions to be added
 
 ## Usage
-Download the library and include (or use `import Dreamwidth from './lib/dreamwidth'` for ES6)
+Download the library and include:
 ```javascript
 var Dreamwidth = require('./lib/dreamwidth');
 ```
-(To-do: publish on npm)
+(or use `import Dreamwidth from './lib/dreamwidth'` for ES6)
+
+**To-do:** publish on npm
 
 ### Login
 Login to your Dreamwidth account (note: you are required to login to access the API)

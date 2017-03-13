@@ -27,6 +27,7 @@ gulp.task('lint', function() {
 
 // Build the library
 gulp.task('build', ['clean', 'lint'], function() {
+  $.util.log('Building files...');
   return gulp.src([paths.src])
     .pipe($.plumber())
     .pipe($.babel())

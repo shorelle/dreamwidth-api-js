@@ -1,8 +1,13 @@
 {
-  "name": "node-dreamwidth",
+  "name": "dreamwidth-api-js",
   "version": "0.0.1",
   "description": "A simple Javascript client for Dreamwidth's XMLRPC API.",
   "main": "lib/dreamwidth.js",
+  "scripts": {
+    "test": "mocha -R spec",
+    "test:record": "NOCK_RECORD=1 npm test",
+    "coverage": "istanbul cover _mocha -- -R spec"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/shorelle/dreamwidth-api-js.git"
@@ -12,7 +17,7 @@
     "xmlrpc",
     "api"
   ],
-  "author": "shorelle <fireskywalker@gmail.com>",
+  "author": "Desiree Surjadi <fireskywalker@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/shorelle/dreamwidth-api-js",
   "dependencies": {
@@ -21,6 +26,8 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
     "chai": "^2.0.0",
+    "chai-as-promised": "^6.0.0",
+    "coveralls": "^2.12.0",
     "gulp": "^3.8.10",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
@@ -28,6 +35,9 @@
     "gulp-load-plugins": "^0.8.0",
     "gulp-notify": "^2.1.0",
     "gulp-plumber": "^0.6.6",
-    "mocha": "^2.1.0"
+    "gulp-util": "^3.0.8",
+    "istanbul": "^0.4.5",
+    "mocha": "^2.1.0",
+    "nock": "^9.0.9"
   }
 }
