@@ -41,3 +41,32 @@ nock(HOST)
            url: 'https://user.dreamwidth.org/123.html' }
         ]
   }));
+
+// Get invalid events response
+var auth_params = 
+  [{ selecttype: 'invalid',
+     username: 'user',
+     auth_method: 'challenge',
+     auth_challenge: 'challenge_cookie',
+     auth_response: '140546b44e8d3c410b598764ef33b251',
+     ver: 1 }];
+nock(HOST)
+  .persist()
+  .post('/interface/xmlrpc', 
+    xml.serializeMethodCall('LJ.XMLRPC.getevents', auth_params))
+  .replyWithError(
+    xml.serializeMethodResponse('XML-RPC fault: Client error: Missing required argument(s): Invalid selecttype.'));
+
+var auth_params = 
+  [{ selecttype: 'lastn',
+     username: 'invalid',
+     auth_method: 'challenge',
+     auth_challenge: 'challenge_cookie',
+     auth_response: '140546b44e8d3c410b598764ef33b251',
+     ver: 1 }];
+nock(HOST)
+  .persist()
+  .post('/interface/xmlrpc', 
+    xml.serializeMethodCall('LJ.XMLRPC.getevents', auth_params))
+  .replyWithError(
+    xml.serializeMethodResponse('XML-RPC fault: Invalid username'));

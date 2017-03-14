@@ -37,8 +37,6 @@ function getChallenge(password) {
         auth_challenge: data.challenge,
         auth_response: this.getHash(data.challenge + password)
       } 
-    }).catch( err => { 
-      throw err;
     });
 }
 
