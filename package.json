@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "A simple Javascript client for Dreamwidth's XMLRPC API.",
   "main": "lib/dreamwidth.js",
+  "engines": {
+    "node" : ">=4.0.0"
+  },
   "scripts": {
     "test": "mocha -R spec",
-    "test:record": "NOCK_RECORD=1 npm test",
     "coverage": "istanbul cover _mocha -- -R spec"
   },
   "repository": {
