@@ -1,4 +1,5 @@
 # dreamwidth-api-js
+[![Build Status](https://travis-ci.org/shorelle/dreamwidth-api-js.svg?branch=master)](https://travis-ci.org/shorelle/dreamwidth-api-js) [![Coverage Status](https://coveralls.io/repos/github/shorelle/dreamwidth-api-js/badge.svg?branch=master)](https://coveralls.io/github/shorelle/dreamwidth-api-js?branch=master)
 A simple Javascript client for [Dreamwidth](http://www.dreamwidth.org)'s XML-RPC API.
 * Uses native Promises (transpiled for ES5)
 * Additional helper functions to be added
