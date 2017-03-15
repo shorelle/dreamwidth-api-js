@@ -1,17 +1,20 @@
 # dreamwidth-api-js
 [![Build Status](https://travis-ci.org/shorelle/dreamwidth-api-js.svg?branch=master)](https://travis-ci.org/shorelle/dreamwidth-api-js) [![Coverage Status](https://coveralls.io/repos/github/shorelle/dreamwidth-api-js/badge.svg?branch=master)](https://coveralls.io/github/shorelle/dreamwidth-api-js?branch=master)
+
 A simple Javascript client for [Dreamwidth](http://www.dreamwidth.org)'s XML-RPC API.
 * Uses native Promises (transpiled for ES5)
 * Additional helper functions to be added
 
 ## Usage
-Download the library and include:
-```javascript
-var Dreamwidth = require('./lib/dreamwidth');
+Install on npm:
 ```
-(or use `import Dreamwidth from './lib/dreamwidth'` for ES6)
+npm install dreamwidth-api-js
+```
 
-**To-do:** publish on npm
+Include the module:
+```javascript
+var Dreamwidth = require('dreamwidth-api-js');
+```
 
 ### Login
 Login to your Dreamwidth account (note: you are required to login to access the API)
@@ -54,4 +57,4 @@ myDreamwidth.method('getevents', options)
 ```
 
 ## To-Do
-Unit testing, helper methods, documentation.
+Helper functions for common methods, documentation.
