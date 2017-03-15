@@ -4,7 +4,7 @@
   "description": "A simple Javascript client for Dreamwidth's XMLRPC API.",
   "main": "lib/dreamwidth.js",
   "engines": {
-    "node" : ">=4.0.0"
+    "node": ">=4.0.0"
   },
   "scripts": {
     "test": "mocha -R spec",
@@ -23,6 +23,7 @@
   "license": "MIT",
   "homepage": "https://github.com/shorelle/dreamwidth-api-js",
   "dependencies": {
+    "babel-runtime": "^6.23.0",
     "xmlrpc": "^1.3.2"
   },
   "devDependencies": {
